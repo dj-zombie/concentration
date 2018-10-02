@@ -84,7 +84,7 @@ export default class Dealer extends React.Component {
       <div className='pick'>
         <ul>
           {this.state.picks.map(function(card, index){
-            return <li key={index}><img className='card' src={card.image} alt="card" /></li>;
+            return <li key={index}><img className='card' src={card.image} alt='card' /></li>;
           })}
         </ul>
       </div>

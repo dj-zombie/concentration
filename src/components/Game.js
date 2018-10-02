@@ -63,17 +63,19 @@ export default class Game extends React.Component {
   render() {
     return (
       <div className='game'>
+        <img className='logo' src='logo.png' alt='card' />
         <GameBoard deckId={this.state.deckId} />
-        <CSSTransitionGroup
-          transitionName="card"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          {this.state.cards.map(function(card, index){
-            return <Card data={card} key={index} />;
-          })}
-        </CSSTransitionGroup>
-        <Dealer board={this.state.cards} deckId={this.state.deckId} />
-        <img className='logo' src='/logo.png' alt='card' />
+        <div className='text-left'>
+          <CSSTransitionGroup
+            transitionName="card"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}>
+            {this.state.cards.map(function(card, index){
+              return <Card data={card} key={index} />;
+            })}
+          </CSSTransitionGroup>
+        </div>
+        <Dealer board={this.state.cards} deckId={this.state.deckId} />        
       </div>
     );
   }

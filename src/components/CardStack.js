@@ -15,7 +15,6 @@ export default class CardStack extends React.Component {
 
   componentWillUnmount() {
     window.ee.removeListener('removeCards', this.remove);
-    React.unmountComponentAtNode(this._target);
   }
 
   // Draw x num of cards from card API
