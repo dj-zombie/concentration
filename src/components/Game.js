@@ -10,7 +10,8 @@ export default class Game extends React.Component {
     super(props);
     this.state = {
       deckId: '',
-      cards: []
+      cards: [],
+      discard: []
     }
     this.getDeckId();
     window.ee.addListener('updateBoard', this.getCards.bind(this))
@@ -36,7 +37,10 @@ export default class Game extends React.Component {
     var vm = this;    
     API.get(this.state.deckId + '/pile/discard/list')
       .then(function (res) {
-        vm.didPlayerWin();
+        if (res.data.piles.discard) { 
+          vm.setState({discard: res.data.piles.discard.cards})
+          vm.didPlayerWin();
+        }
       }).catch(function (error) {console.log(error);})
   }
 
