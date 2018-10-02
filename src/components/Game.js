@@ -72,7 +72,8 @@ export default class Game extends React.Component {
             return <Card data={card} key={index} />;
           })}
         </CSSTransitionGroup>
-        <Dealer board={this.state.cards} deckId={this.state.deckId} />        
+        <Dealer board={this.state.cards} deckId={this.state.deckId} />
+        <img className='logo' src='/logo.png' alt='card' />
       </div>
     );
   }

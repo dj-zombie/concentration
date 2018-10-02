@@ -12,6 +12,9 @@ class App extends Component {
     window.ee = ee;
     ee.addListener('restart', this.restart.bind(this))
   }
+  componentDidMount() {
+    document.title = "Concentration: A simple card matching game.";
+  }
   // Restart / New game
   restart() {
     this.setState({restart: !this.state.restart});
