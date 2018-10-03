@@ -59,6 +59,7 @@ export default class Game extends React.Component {
     if (this.state.discard && this.state.discard.length === 52) {
       let playAgain = window.confirm('You WIN! Play Again?')
       if (playAgain) {
+        this.setState({discard: null})
         window.ee.emitEvent('restart');
       }
     }
